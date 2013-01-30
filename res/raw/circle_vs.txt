@@ -1,0 +1,9 @@
+
+uniform vec2 uAspectRatio;
+uniform vec2 uPosition;
+attribute vec2 aPosition;
+
+void main() {
+	vec2 pos = vec2(sin(aPosition.x), cos(aPosition.x)) * aPosition.y;
+	gl_Position = vec4(uPosition + pos * uAspectRatio, 0.0, 1.0);
+}
