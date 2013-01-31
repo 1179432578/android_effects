@@ -1,9 +1,15 @@
 
-uniform vec2 uAspectRatio;
-uniform vec2 uPosition;
+uniform float uAngleSource;
+uniform float uAngleTarget;
+uniform float uRadiusInner;
+uniform float uRadiusOuter;
+uniform mat4 uModelMatrix;
+uniform mat4 uProjectionMatrix;
 attribute vec2 aPosition;
 
 void main() {
-	vec2 pos = vec2(sin(aPosition.x), cos(aPosition.x)) * aPosition.y;
-	gl_Position = vec4(uPosition + pos * uAspectRatio, 0.0, 1.0);
+	float angle = mix(uAngleSource, uAngleTarget, aPosition.x);
+	vec2 pos = vec2(sin(angle),	cos(angle));
+	pos *= mix(uRadiusInner, uRadiusOuter, aPosition.y);
+	gl_Position = uProjectionMatrix * uModelMatrix * vec4(pos, 0.0, 1.0);
 }
