@@ -30,14 +30,14 @@ import android.os.SystemClock;
 
 public class ViewStars extends ViewBase {
 
-	private EffectsShader mShaderStar = new EffectsShader();
-	private float[] mMatrixView = new float[16];
-	private float[] mMatrixProjection = new float[16];
-	private float[] mMatrixModelViewProjection = new float[16];
-	private boolean[] mShaderCompilerSupport = new boolean[1];
-	private long mLastRenderTime = -1;
-	private Star[] mStarArray = new Star[2000];
 	private ByteBuffer mBufferVertices;
+	private long mLastRenderTime = -1;
+	private float[] mMatrixModelViewProjection = new float[16];
+	private float[] mMatrixProjection = new float[16];
+	private float[] mMatrixView = new float[16];
+	private boolean[] mShaderCompilerSupport = new boolean[1];
+	private EffectsShader mShaderStar = new EffectsShader();
+	private Star[] mStarArray = new Star[2000];
 
 	public ViewStars(Context context) {
 		super(context);

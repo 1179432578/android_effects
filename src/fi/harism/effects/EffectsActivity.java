@@ -47,7 +47,7 @@ public class EffectsActivity extends Activity implements ActionBar.TabListener {
 		tab.setText(R.string.tab_circle);
 		tab.setTag(new ViewCircles(this));
 		actionBar.addTab(tab);
-		
+
 		tab = actionBar.newTab();
 		tab.setTabListener(this);
 		tab.setText(R.string.tab_rubber);
