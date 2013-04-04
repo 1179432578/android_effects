@@ -207,7 +207,7 @@ public class ViewCircles extends ViewBase {
 					+ (mPositionTarget[1] - mPositionSource[1]) * tPosition;
 			Matrix.setIdentityM(mModelMatrix, 0);
 			Matrix.translateM(mModelMatrix, 0, x, y, -5);
-			
+
 			float angle = mRotationSource + (mRotationTarget - mRotationSource)
 					* tRotation;
 			Matrix.rotateM(mModelMatrix, 0, angle, 0, 0, 1);
