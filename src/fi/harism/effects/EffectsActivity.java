@@ -44,6 +44,12 @@ public class EffectsActivity extends Activity implements ActionBar.TabListener {
 
 		tab = actionBar.newTab();
 		tab.setTabListener(this);
+		tab.setText(R.string.tab_fluffy);
+		tab.setTag(new ViewFluffy(this));
+		actionBar.addTab(tab);
+
+		tab = actionBar.newTab();
+		tab.setTabListener(this);
 		tab.setText(R.string.tab_pentagons);
 		tab.setTag(new ViewPentagons(this));
 		actionBar.addTab(tab);
